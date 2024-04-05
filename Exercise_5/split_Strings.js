@@ -1,13 +1,6 @@
 let str = 'abcdef';
 let str2 = 'abc';
 let str3 = '';
-/**
- * Determines whether the length of a given string is even or odd.
- *
- * @param {string} string - The input string to check.
- * @returns {string} - If the length of the string is even, returns 'Even'. If the length is odd, returns 'Odd'.
- */
-const checkString = string => string.length % 2 === 0 ? 'Even' : 'Odd';
 
 function solution(str) {
     if (str === "") {
