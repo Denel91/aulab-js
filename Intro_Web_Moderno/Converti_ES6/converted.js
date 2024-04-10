@@ -1,5 +1,4 @@
 import {people} from './data.js';
-import * as console from "node:console";
 
 const isActive = ({isActive}) => isActive;
 
@@ -12,8 +11,7 @@ const getEmails = (people, options = {}) => {
 
     return people.map(person => {
         return withNames
-            ? `${person.name} <${person.email}>`
-            : person.email;
+            ? `${person.name} <${person.email}>` : person.email;
     }).join(', ');
 };
 
