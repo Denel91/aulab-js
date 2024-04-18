@@ -16,11 +16,11 @@ const getEmails = (people, options = {}) => {
 };
 
 const getYoungest = (people) => {
-    const sortedPeople = [...people].sort((personA, personB) => personA.age - personB.age);
+    const [youngest, ...others] = [...people].sort((personA, personB) => personA.age - personB.age);
 
     return {
-        youngest: sortedPeople[0],
-        others: sortedPeople.slice(1)
+        youngest,
+        others
     }
 };
 
