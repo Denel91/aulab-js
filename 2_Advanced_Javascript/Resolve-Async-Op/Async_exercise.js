@@ -29,7 +29,7 @@ const databaseCars = [
 const showCars = () => {
     setTimeout(() => {
         databaseCars.forEach((car) => {
-            console.log(car);
+            console.log(`Brand: ${car.brand}, Model: ${car.model}`);
         })
     }, 2000);
 };
@@ -42,6 +42,22 @@ const addNewCar = () => {
 };
 */
 
+const insertCar = (brand, model) => {
+    return databaseCars.push({brand, model});
+};
+
+const addNewCar = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(insertCar("Ford", "Fiesta"));
+        reject(new Error(`Error: ${reject}`));
+    }, 4000);
+});
+
+addNewCar
+    .then(showCars)
+    .finally(() => console.log("Done!"));
+
+/*
 const addNewCar = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve(databaseCars.push({brand: "Toyota", model: "Camry"}));
@@ -52,5 +68,6 @@ const addNewCar = new Promise((resolve, reject) => {
 addNewCar
     .then(showCars)
     .finally(() => console.log("Done!"));
+*/
 
 
